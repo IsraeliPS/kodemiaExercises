@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Ciclos</title>
+</head>
+<body>
+    <nav class="sticky-top">
+        <div class="navbar d-flex justify-content-between w-100 ">
+            <p class="mx-auto">En teoría, no hay diferencia entre práctica y teoría. <br>
+                En la práctica, si la hay. (Yogi Berra)</p>
+            <a class="buttonHome p-2" href="../index.html">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="title w-100 text-center">Ciclos</h1>
+        <h5 class="text-center">Este ejercicio consta de 7 problemas los cuales son:</h5>
+        <br>
+        <div class="d-flex flex-row flex-wrap justify-content-center px-0">
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 1: Pedir al usuario usuario un numero entre 1 y 10 e imprimir la tabla de multiplicar de ese número
+                    p.ej.
+                    <br>3 x 1 = 3
+                    <br>3 x 2 = 6
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio1()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 2: Pedir al usuario un numero entre 10 y 100 e imprimir todos los numeros pares que existen entre 1 y ese numero</p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio2()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 3: 
+                    Imprimir en consola la suma total de todos los digitos de una cantidad p.ej. "1234" -> 10
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio3()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 4: 
+                    Imprimir en consola el siguiente patrón
+                    <br>*
+                    <br>**
+                    <br>***
+                    <br>****
+                    <br>*****
+                    <br>******
+                    <br>*******
+                    <br>********
+                    <br>*********
+                    <br>**********
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio4()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 5: 
+                    Imprimir en consola la suma de los multiplos de 3 y 5 contenidos entre el 1 y 100 -> 233168
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio5()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 6: 
+                    Solicitar una cadena de texto y convertir todo a minusculas, posteriormente cambiar a mayuscula los caracteres iniciales de cada palabra
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio6()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 7: 
+                    Desarrollar un programa que solicite 10 números e imprima la suma de lo últimos 5 valores ingresados.
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio7()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    <footer class="fixed-bottom">
+        <div class="footer d-flex justify-content-center w-100 text-center">
+            <h6 class="">Todos los derechos reservados 2021&copy;</h6>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

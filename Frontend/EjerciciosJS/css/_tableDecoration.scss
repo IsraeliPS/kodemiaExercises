@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 3px solid gray;
+    color:#000000;
+    margin:0 auto;
+    background-color:rgba(245, 220, 188, 0.363)
+}
+
+thead th:nth-child(1){width: 30%;}
+thead th:nth-child(2){width: 10%;}
+thead th:nth-child(3){width: 10%;}
+thead th:nth-child(4){width: 10%;}
+thead th:nth-child(5){width: 30%;}
+
+
+tbody th:nth-child(1){width: 30%;}
+tbody th:nth-child(2){width: 10%;}
+tbody th:nth-child(3){width: 10%;}
+tbody th:nth-child(4){width: 10%;}
+tbody th:nth-child(5){width: 30%;}
+
+th, td{
+    padding: 10px;
+}
+
+thead th, tfoot th{
+    font-family: 'Rock Salt', cursive;
+}
+
+th{
+    letter-spacing: 2px;
+}
+
+td{
+    letter-spacing: 1px;
+}
+
+thead th,tbody td {
+    text-align: center;
+}
+
+tfoot th{
+    text-align: right;
+    
+}
+
+.result{
+    background-color: rgba(72, 95, 45, 0.767);
+    width: 100%;
+}

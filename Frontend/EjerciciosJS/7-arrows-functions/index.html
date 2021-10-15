@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Funciones Flecha</title>
+</head>
+<body>
+    <nav class="sticky-top">
+        <div class="navbar d-flex justify-content-between w-100 ">
+            <p class="mx-auto">En teoría, no hay diferencia entre práctica y teoría. <br>
+                En la práctica, si la hay. (Yogi Berra)</p>
+            <a class="buttonHome p-2" href="../index.html">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="title w-100 text-center">Funciones Flecha</h1>
+        <h5 class="text-center">Este ejercicio consta de 15 problemas que son:</h5>
+        <br>
+        <div class="d-flex flex-row flex-wrap justify-content-center px-0">
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 1: 
+                    <br>Dado un string de palabras, devolver la palabra más larga.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio1()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 2: 
+                    <br>Crear un programa que permita detectar si una frase finaliza con punto.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio2()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 3: 
+                    <br>Crear un programa que permita al usuario retornar el numero de coincideas de una palabra en una frase que el mismo usuario introduzca
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio3()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 4: 
+                    <br>Crear un programa que permita al usuario extraer una subcadena de una cadena dada.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio4()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 5: 
+                    <br>Crear un programa que permita comparar dos palabras dadas por el usuario y determine si son iguales o no.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio5()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 6: 
+                    <br>Crear un programa que permita a una cadena de texto muestre el caracter '-' entre cada caracter de la cadena.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio6()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 7: 
+                    <br>Sabiendo que una cadena de texto contiene parentesis. Crear un programa que me devuelva la cadena que se encuetra entre los parentesis.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio7()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 8: 
+                    <br>Realizar un programa que muestre una piramide del 1 al 9 de las siguientes formas:
+                    <br>
+                    <br>Forma 1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forma 2:
+                    <br>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;999999999
+                    <br>22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;88888888
+                    <br>333&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7777777
+                    <br>4444&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;666666
+                    <br>55555&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;55555
+                    <br>666666&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4444
+                    <br>7777777&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;333
+                    <br>88888888&nbsp;&nbsp;&nbsp;22
+                    <br>999999999&nbsp;1
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio8()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 9: 
+                    <br>Solicitar al usuario un nombre por medio del promt e ingresarlo a una coleccion , validando que no se repita ningun nombre.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio9()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 10: 
+                    <br>Dado una coleccion de numeros. obtener el elemento Mayor, Menor, el Promedio y la Suma de los elementos.                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio10()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 11: 
+                    <br>Solicitar al usuario por medio de un prompt una cadena de numeros separados por algun caracter y que cada numero se agregue a una colecion de numeros.
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio11()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 12: 
+                    <br>Dado un array de números, determinar por cada elemento si es un multiplo de 4, 3, 5, 2.
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio12()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 13: 
+                    <br>Crear un programa que dado un array de strings y un número, debe de imprimir cada uno de los items del array con los caracteres limitados al número ingresado.
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio13()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 14: 
+                    <br>Crear un programa que dados los datos de 3 lados de un triangulo con base en esos datos, determinar el área del triangulo y mostrarla en otro mensaje, indicar si el triangulo es isoseles, equilátero o escaleno.
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio14()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 15: 
+                    <br>Crear un programa que genere un string con "n" caracteres aleatorios, con la unica condicion de que no haya caracteres repetidos en el string.
+                    
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio15()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    <footer class="fixed-bottom">
+        <div class="footer d-flex justify-content-center w-100 text-center">
+            <h6 class="">Todos los derechos reservados 2021&copy;</h6>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

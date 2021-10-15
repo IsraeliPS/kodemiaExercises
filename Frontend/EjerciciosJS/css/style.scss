@@ -1,0 +1,25 @@
+@import 'vars';
+@import 'buttonDecoration';
+@import 'navBar';
+@import 'buttonHome';
+@import 'footer';
+@import 'tableDecoration';
+@import 'carusel';
+@import 'crud_ajax';
+
+body{
+    max-width: 1440px;
+    margin: 0 auto;
+    color:$textBody;
+    background-color:$fondo;
+}
+
+.title{
+    background: linear-gradient(-45deg, #f0d0c7bb, #ebb6cab2);
+    color: $negro;
+}
+
+.textFormat{
+    font-size: 16px;
+    width: 650px;
+}

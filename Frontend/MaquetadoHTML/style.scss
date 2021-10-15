@@ -1,0 +1,57 @@
+body{
+    max-width: 1200px;
+    background-color:seashell;
+}
+
+.centrar{
+    text-align: center;
+}
+
+.tamano{
+    height: 250px;
+    width: 450px;
+    margin: 55px 65px;
+    background-color: transparent;
+    
+    background-size: 600px;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: 10px 15px 5px black;
+    font-size: 50px;
+    color:linear-gradient(#e66465, #9198e5);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.imagen1 {
+    background-image: url("https://www.filepicker.io/api/file/INZsH6XtRIqQqxvYGP6Q");
+}
+
+.imagen2 {
+    background-image: url("https://soyhorizonte.com/wp-content/uploads/2020/08/Screenshot_2020-10-28-REDESIGN-Speeding-up-Application-Development-with-Bootstrap-Luke_Newsletter-acf85cc241bac1caa6b2cd3a4....png");
+}
+
+.tamano span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.tamano span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.tamano:hover span {
+    padding-right: 25px;
+}
+
+.tamano:hover span:after {
+    opacity: 1;
+    right: 0;
+}

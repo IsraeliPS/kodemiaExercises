@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEV Community 👩‍💻👨‍💻</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <!-- *********barra superior -->
+
+  <nav class=" border-4 border-bottom mb-1 sticky navbar-light">
+    <div class="container ">
+      <div class="row">
+        <div class="nav col-1 col-md-5 col-lg-6 justify-content-sm-start justify-content-start align-items-center flex-nowrap">
+          <button onclick="openNav()" class="openbtn d-sm-block d-md-none mt-3" role="button">
+            <span class="navbar-toggler-icon ml-1"></span>
+          </button>
+          <a href="./index.html">
+            <img class="img-navbar rounded mt-2" id="logo" src="https://res.cloudinary.com/practicaldev/image/fetch/s--R9qwOwpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/78hs31fax49uwy6kbxyw.png">
+          </a>
+          <form class="form-block d-none d-md-block col-md-11 col-lg-12 m-2">
+            <input class="form-control mr-sm-0 rounded" type="search" placeholder="Search..." aria-label="Search">
+          </form>
+        </div>
+        <div class="nav col-11 col-md-6 col-lg-6 justify-content-sm-end justify-content-end align-items-center flex-nowrap">
+          <a class="nav-link active" href="#">
+            <button class="btn btn-primary d-none d-md-block">
+              Create Post
+            </button>
+          </a>
+            
+          <a class="img-navbar nav-link active d-sm-block d-md-none" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="am5xgxbuqw56tbq737km7b08qq2ooxet" class="crayons-icon"><title id="am5xgxbuqw56tbq737km7b08qq2ooxet">Search</title>
+            <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"></path>
+            </svg>
+          </a>
+
+          <a class="img-navbar nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="arbj5z9x35iumprgat89iw4sn2p8xegt" class="crayons-icon"><title id="arbj5z9x35iumprgat89iw4sn2p8xegt">Connect</title>
+            <path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10H2l2.929-2.929A9.969 9.969 0 012 12zm4.828 8H12a8 8 0 10-8-8c0 2.152.851 4.165 2.343 5.657l1.414 1.414-.929.929zM8 13h8a4 4 0 11-8 0z"></path>
+            </svg>
+          </a>
+        
+          <a class="img-navbar nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="ao3y3xgpkysd15o5veb3dcbucy9ie2lx" class="crayons-icon"><title id="ao3y3xgpkysd15o5veb3dcbucy9ie2lx">Notifications</title>
+            <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"></path>
+            </svg>
+          </a>
+        
+          <a class="img-navbar nav-link" href="#">
+            <img id="avatar" class="rounded-circle" src="https://res.cloudinary.com/practicaldev/image/fetch/s--R9qwOwpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/78hs31fax49uwy6kbxyw.png">
+          </a>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- sidebar elements -->
+  <div id="mySidebar" class="sidebar">
+    <div id="sidebar-header">
+      <a href="#">Dev Community</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    </div>
+    
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- *********termina barra superior -->
+
+  <div class="container-xl" >
+    <div class="row">
+    <!-- *********menu izquierdo -->
+      <aside class="col-md-3 col-lg-2 d-none d-md-block aside-left">
+        <div>
+        &#10084;
+        1
+    </div>
+        <div>
+        &#129412;
+        0
+        </div>
+        <div>
+        &#127987;
+        1
+        </div>
+
+      </aside>
+    <!-- *********termina menu izquierdo -->
+
+    <!-- *********principal de Posts -->
+      <main class="col-12 col-md-9 col-lg-7">
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--jtP-wo_X--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s8bwbtrjcsrbsxlja2fp.png" alt="">
+        <h1>WEB-RESPONSIVE-DESIGN</h1>
+        <div class="colores">
+        <H3 class="web rounded-pill p-2">#webdev</H3>
+        <H3 class="javascript rounded-pill p-2">#javascript</H3>
+        <H3 class="css rounded-pill p-2">#css</H3>
+        <H3 class="html rounded-pill p-2">#html</H3>
+      </div>
+      <h2>Responsive Design Paradigm</h2>
+      <p>Modern websites are designed to be responsive. What does responsive mean though?</p>
+      <p>A website being responsive can largely have two traits</p>
+      <ul>
+          <li> flexibility to stretch and shrink in size when screen sizes change.</li>
+            <li>ability for elements to change its position and structures when screened in different devices.</li>
+          </ul>
+          <h2>Flexibility to stretch and shrink</h2>
+          <p>Browse on internet my personal site haneulab both in your desktop (or laptop) and your mobile device.</p>
+          <p>The landing page should look a bit different in its width size and the gap size it has from the main content to the ends of the screen. This is because I used @media screen and (min-width 768px) {} when designing the site in the stylesheet (CSS). </p>
+      <p>Here, I performed the flexibility of my site to stretch and shrink depending on viewer's device sizes, more specifically called, the size of viewport width.    </p>
+      <h2>Ability of an element to change its position  </h2>
+      <p>Taking flexibility in mind, each element in the site has ability to change its position or local positions (cannot control the parent element but can control its children elements). The example is below.    </p>
+      <p>Browser a coffee shop site Almond Haus which I built for my friend. Go to the gallery section. Here, try to shrink the width of the browser, you will see that each of the pictures will structure self in columns rather than shrinking the ratio of each pictures size. This, too, can be done using media query mentioned above.    </p>
+      <h2>Conclusion</h2>
+      <p>In web design & development, media query is fundamental technology we can use to make the site more dynamic and engaging for the users. Not only that, it has a huge impact on users behavior. If your website is not responsive, users might not want to stay there long enough to learn about your product or you because it is hard to look at and clear enough to figure out the contents.</p>
+    <section>
+        <div class="discussion">
+  <h2>Discussion (0)</h2>
+  <button class="bttn-subs">Subscribe</button>
+  </div>
+  <div class="inputs">
+  <input class="text" type="text" placeholder="Add to discussion">
+  <input type="file">
+  </div>
+    </section>
+  
+      
+        
+
+        
+      </main>
+    <!-- *********termina principal de posts -->
+
+    <!-- *********menu derecho  -->
+      <aside class="col-lg-3 d-none d-lg-block">
+        <div class='card'>
+            <div class="cuadro"></div>
+            <div class="flex-column">
+              <img class="newfoto" 
+                    src="https://res.cloudinary.com/practicaldev/image/fetch/s---Py5XEKR--/c_fill,f_auto,fl_progressive,h_120,q_auto,w_120/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/660288/3a653bcc-4ee3-49f3-a036-94d6560d588f.png">
+              <div class="nombre"> Simon Barker </div>
+          </div>
+            <button type='button' class='btn btn-primary w-100 m-2'>Follow</button>
+            <p class="textalignjustify">I'm a web developer, graphic designer, type designer, musician, comicbook-geek, LEGO-collector, food lover … as well as husband and father, located just south of Copenhagen, Denmark.
+            <strong><p class='card-avatar color-text'>LOCATION</p></strong>
+            <p>Copenhagen</p>
+            <strong><span class='card-avatar color-text'>WORK</span></strong>
+            <p>Owner at The Frontend Agency</p>
+            <strong><span class='card-avatar color-text'>JOINED</span></strong>
+            <p>16 de nov. de 2020</p>
+        </div>
+      </aside>
+    <!-- *********termina menu derecho -->
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="efectos.js"></script>
+
+  <aside></aside>
+<footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="efectos.js"></script>
+</body>
+</html>
+

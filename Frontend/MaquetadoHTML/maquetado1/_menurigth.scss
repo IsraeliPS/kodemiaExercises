@@ -1,0 +1,101 @@
+aside {
+    display: none;
+}
+
+@media (min-width: 900px){
+    aside {
+        display: block;
+        align-items: flex-start;
+        @include center-item();
+    }
+    #aside-right {
+        @include center-item();
+        width: 320px;
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card{
+    background-color: #FFF;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 3px 0;
+    
+    a{
+        text-decoration: none;
+        color:rgb(59, 73, 223)
+    }
+    
+    .image-menurigth{
+        object-fit: cover;
+        height: 180px;
+        background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--SHlJgkk0--/c_limit,f_auto,fl_progressive,q_auto,w_350/https://jess.forem.lol/remoteimages/uploads/articles/a3ojuveqrskiei1m6x6x.png");
+    }
+}
+
+.list-rigth{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+#font-change{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#text-blue{
+    color: rgb(59, 73, 223);
+    font-weight: bold;
+}
+
+.card2{
+    background-color: #FFF;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    
+    p{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    a{
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .card-aling{
+        margin-left: 33px;
+    }
+
+    .end-list{
+        width: 150px;
+        &:hover{
+            color: rgb(59, 73, 223);
+        }
+    }
+}
+
+@media (min-width: 900px){
+    .chico{
+    visibility:hidden;
+    width: 0px;
+    }
+    
+    #aside-right {
+        display: flex;
+    }
+}
+
+@media (max-width: 899px){
+    .grande{
+        display:none;
+        width:0px;
+        visibility:hidden;
+        width: 0px;
+    }
+}

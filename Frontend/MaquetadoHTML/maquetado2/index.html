@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEV Community 👩‍💻👨‍💻</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ***********************************************************************barra superior -->
+
+  <nav class=" border-4 border-bottom mb-1 sticky navbar-light">
+    <div class="container ">
+      <div class="row">
+          <div class="nav col-1 col-md-5 col-lg-6 justify-content-sm-start justify-content-start align-items-center flex-nowrap">
+            <button onclick="openNav()" class="openbtn d-sm-block d-md-none mt-3" role="button">
+              <span class="navbar-toggler-icon ml-1"></span>
+            </button>
+            <a href="#">
+              <img class="img-navbar rounded mt-2" id="logo" src="https://res.cloudinary.com/practicaldev/image/fetch/s--R9qwOwpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/78hs31fax49uwy6kbxyw.png">
+            </a>
+            <form class="form-block d-none d-md-block col-md-11 col-lg-12 m-2">
+              <input class="form-control mr-sm-0 rounded" type="search" placeholder="Search..." aria-label="Search">
+            </form>
+          </div>
+          <div class="nav col-11 col-md-6 col-lg-6 justify-content-sm-end justify-content-end align-items-center flex-nowrap">
+            
+            <a class="nav-link active" href="#">
+              <button class="btn btn-primary d-none d-md-block">
+                Create Post
+              </button>
+            </a>
+              
+            <a class="img-navbar nav-link active d-sm-block d-md-none" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="am5xgxbuqw56tbq737km7b08qq2ooxet" class="crayons-icon"><title id="am5xgxbuqw56tbq737km7b08qq2ooxet">Search</title>
+              <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"></path>
+              </svg></a>
+
+            <a class="img-navbar nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="arbj5z9x35iumprgat89iw4sn2p8xegt" class="crayons-icon"><title id="arbj5z9x35iumprgat89iw4sn2p8xegt">Connect</title>
+              <path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10H2l2.929-2.929A9.969 9.969 0 012 12zm4.828 8H12a8 8 0 10-8-8c0 2.152.851 4.165 2.343 5.657l1.414 1.414-.929.929zM8 13h8a4 4 0 11-8 0z"></path>
+              </svg></a>
+          
+          
+            <a class="img-navbar nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="ao3y3xgpkysd15o5veb3dcbucy9ie2lx" class="crayons-icon"><title id="ao3y3xgpkysd15o5veb3dcbucy9ie2lx">Notifications</title>
+              <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"></path>
+              </svg></a>
+          
+            <a class="img-navbar nav-link" href="#"><img id="avatar" class="rounded-circle" src="https://res.cloudinary.com/practicaldev/image/fetch/s--R9qwOwpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/78hs31fax49uwy6kbxyw.png"></a>
+              
+          
+          </div>
+      </div>
+    </div>
+  </nav>
+  <!-- **********************************************************************************sidebar elements -->
+  <div id="mySidebar" class="sidebar">
+    <div id="sidebar-header">
+      <a class="navbar-header border-4 border-bottom" href="#"><h4>Dev Community</h4></a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    </div>
+    <h3>DEV community</h3>
+          <ul class="lista">
+            <li> &#127968; Home</li>
+            <li> &#128451;&#65039; Reading list</li>
+            <li> &#129534; Listings</li>
+            <li> &#127897;&#65039; Podcasts</li>
+            <li> &#128253;&#65039; Videos</li>
+            <li> &#128466;&#65039; Tags</li>
+            <li> &#128161; FAQ</li>
+            <li> &#128717;&#65039; DEV Shop</li>
+            <li> &#10084;&#65039; Sponsors</li>
+            <li> &#128187; About</li>
+            <li> &#128239;  Contact</li>
+          </ul>
+          <h3>Other</h3>
+          <ul class="lista">
+            <li> &#128077; Code of conduct</li>
+            <li> &#129299; Privacy Policy</li>
+            <li> &#128064; Terms of use</li>
+          </ul> 
+          <div class="social-media-icons">
+            <img src="https://www.begreenchica.com/wp-content/uploads/2016/05/icono-twitter.png" alt="">
+            <img src="https://gaiadivers.mx/wp-content/uploads/2019/04/Icono-facebook-Sotodrone.png" alt="">
+            <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" alt="">
+            <img src="https://icones.pro/wp-content/uploads/2021/02/instagram-icone-gris.png" alt="">
+            <img src="https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-gris.png" alt="">
+          </div>
+          <div class=myTag>
+            <p><b>My Tags</b></p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="crayons-icon">
+              <path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"></path>
+            </svg>
+          </div>
+  </div>
+
+  <!-- **********************************************************************************termina barra superior -->
+
+  <div class="container-xl" >
+    <div class="row">
+    <!-- ********************************************************************************menu izquierdo -->
+      <aside class="col-md-3 col-lg-2 d-none d-md-block">
+          <h3>DEV community</h3>
+          <ul class="lista">
+            <li> &#127968; Home</li>
+            <li> &#128451;&#65039; Reading list</li>
+            <li> &#129534; Listings</li>
+            <li> &#127897;&#65039; Podcasts</li>
+            <li> &#128253;&#65039; Videos</li>
+            <li> &#128466;&#65039; Tags</li>
+            <li> &#128161; FAQ</li>
+            <li> &#128717;&#65039; DEV Shop</li>
+            <li> &#10084;&#65039; Sponsors</li>
+            <li> &#128187; About</li>
+            <li> &#128239;  Contact</li>
+          </ul>
+          <h3>Other</h3>
+          <ul class="lista">
+            <li> &#128077; Code of conduct</li>
+            <li> &#129299; Privacy Policy</li>
+            <li> &#128064; Terms of use</li>
+          </ul> 
+          <div class="social-media-icons">
+            <img src="https://www.begreenchica.com/wp-content/uploads/2016/05/icono-twitter.png" alt="">
+            <img src="https://gaiadivers.mx/wp-content/uploads/2019/04/Icono-facebook-Sotodrone.png" alt="">
+            <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-grise.png" alt="">
+            <img src="https://icones.pro/wp-content/uploads/2021/02/instagram-icone-gris.png" alt="">
+            <img src="https://icones.pro/wp-content/uploads/2021/05/symbole-twitch-logo-icone-gris.png" alt="">
+          </div>
+          <div class=myTag>
+            <p><b>My Tags</b></p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="crayons-icon">
+              <path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"></path>
+            </svg>
+          </div>
+      </aside>
+    <!-- ********************************************************************************termina menu izquierdo -->
+
+    <!-- ********************************************************************************principal de Posts -->
+      <main class="col-12 col-md-9 col-lg-7">
+      
+        <!-- ****************************************************************************menu superior de los posts -->
+        <div class="d-none d-sm-block">
+          <div class="d-flex">
+            <div class="crece m-2 p-2"><strong> Post </strong> </div>
+            <div class="navbox bottom-line m-2 p-2">Feed</div>
+            <div class="navbox m-2 p-2">Week</div>
+            <div class="navbox m-2 p-2">Month</div>
+            <div class="navbox m-2 p-2">Year</div>
+            <div class="navbox m-2 p-2">Infinity</div>
+            <div class="navbox m-2 p-2">Latest</div>
+          </div>
+        </div>
+
+        <!-- ****************************************************************************dropdown de menu post en movil -->
+        <div class="container-fluid d-block d-sm-none">
+          <div class="row">
+            <p class="col-9">Post</p>
+            <div class="col-3 dropdown ">
+              <button class="btn cambio-color dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Feed
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item">Feed</a>
+                <a class="dropdown-item">Week</a>
+                <a class="dropdown-item">Month</a>
+                <a class="dropdown-item">Year</a>
+                <a class="dropdown-item">Infinity</a>
+                <a class="dropdown-item">Latest</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ******************************************************************************termina menu superior posts -->
+      
+        <!-- ******************************************************************************articulo 1 -->
+        <article>
+          <div class="card col-12 d-flex">
+            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--IkzY2SY4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3no57v516zwwg1tjelt3.jpg" class="card-img-top" alt="...">
+            
+            <div class="container flex-row">
+              <div class="row">
+                <div class="col-2 alinear">
+                  <img class="foto " 
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s---Py5XEKR--/c_fill,f_auto,fl_progressive,h_120,q_auto,w_120/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/660288/3a653bcc-4ee3-49f3-a036-94d6560d588f.png">
+                </div>
+                <div class="container col-10 flex-column">
+                  <div class="row">
+                    
+                    <!-- *******************************************************************ventana de popover -->
+                    <a class="col-12 text-decoration-none" href="#" title="Simon Barker" data-toggle="popover" data-placement="top" data-trigger="hover" 
+                    data-content="
+                      <button type='button' class='btn btn-primary w-100'>Follow</button>
+                      <span class='card-avatar'>At careerswitchtocoding.com I am on a mission to get every developer get their first job with more than 'just make a profile and apply'</span>
+                      <br><br><span class='card-avatar'>EMAIL</span>
+                      <br><a href='#' class='card-avatar azul'>simon@careerswitchtocoding.com</a>
+                      <br><br><span class='card-avatar'>WORK</span>
+                      <br><strong><span class='card-avatar'>Senior Full Stack Developer</span></strong>
+                      <br><br><span class='card-avatar'>LOCATION</span>
+                      <br><strong><span class='card-avatar'>Warwick, UK</span></strong>
+                      <br><br><span class='card-avatar'>EDUCATION</span>
+                      <br><strong><span class='card-avatar'>PhD Electronics</span></strong>
+                      <br><br><span class='card-avatar'>JOINED</span>
+                      <br><strong><span class='card-avatar'>2 de julio de 2021</span></strong>
+                    "> Simon Barker</a>
+                      <!-- *******************************************************************termina popover -->
+
+                      <!-- *******************************************************************card post -->
+                    <p class="col-12">Aug 20</p>
+                    <h3 class="col-12 titulo"><a href="post1.html">What is Agile?</a></h3>
+
+                    <div class="container col-12 flex-row m-0">
+                      <div class="row">
+                        <div class="mr-3 ml-3">#career</div>
+                        <div class="mr-3 ml-3">#webdev</div>
+                        <div class="mr-3 ml-3">#beginners</div>
+                      </div>
+                    </div>
+                    
+                    <div class="container col-12 flex-row">
+                      <div class="row justify-content-between align-items-center">
+                    
+                        <div class="d-none d-sm-block">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">9 reactions</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">Add comment</a>
+                        </div>
+                    
+                        <div class="d-block d-sm-none">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">9</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">0</a>
+                        </div>
+                    
+                        <div>
+                          <a class="links-post social" href="#">5 min read</a>
+                          <a class="btn btn-secondary social button-save" href="#" role="button">Save</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- ****************************************************************************************articulo 2 -->
+        <article>
+          <div class="card col-12 d-flex">
+            
+            
+            <div class="container flex-row">
+              <div class="row">
+                <div class="col-2 alinear">
+                  <img class="foto " 
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--3wyb1_sS--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/172822/ad9293b9-7c32-46a2-872e-49e11f61169c.jpg">
+                </div>
+                <div class="container col-10 flex-column">
+                  <div class="row">
+                    
+                    <!-- ventana de popover -->
+                    <a class="col-12 text-decoration-none" href="#" title="Iain Freestone" data-toggle="popover" data-placement="top" data-trigger="hover" 
+                    data-content="
+                      <button type='button' class='btn btn-primary w-100'>Follow</button>
+                      <span class='card-avatar'>A Web developer from Hampshire in the south of England.</span>
+                      <br><br><span class='card-avatar'>WORK</span>
+                      <br><strong><span class='card-avatar'>Web Developer</span></strong>
+                      <br><br><span class='card-avatar'>LOCATION</span>
+                      <br><strong><span class='card-avatar'>Hampshire UK</span></strong>
+                      <br><br><span class='card-avatar'>JOINED</span>
+                      <br><strong><span class='card-avatar'>28 de mayo de 2019</span></strong>
+                    ">Iain Freestone</a>
+                      <!-- termina popover -->
+
+                      <!-- card post -->
+                    <p class="col-12">Aug 20</p>
+                    <h3 class="col-12 titulo">🚀10 Trending projects on GitHub for web developers - 20th August 2021</h3>
+
+                    <div class="container col-12 flex-row m-0">
+                      <div class="row">
+                        <div class="mr-3 ml-3">#react</div>
+                        <div class="mr-3 ml-3">#javascrip</div>
+                        <div class="mr-3 ml-3">#webdev</div>
+                        <div class="mr-3 ml-3">#productivity</div>
+                      </div>
+                    </div>
+                    
+                    <div class="container col-12 flex-row">
+                      <div class="row justify-content-between align-items-center">
+                    
+                        <div class="d-none d-sm-block">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">64 reactions</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">Add comment</a>
+                        </div>
+                    
+                        <div class="d-block d-sm-none">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">64</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">0</a>
+                        </div>
+                    
+                        <div>
+                          <a class="links-post social" href="#">3 min read</a>
+                          <a class="btn btn-secondary social button-save" href="#" role="button">Save</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ******************************************************************************************articulo 3 -->
+        <article>
+          <div class="card col-12 d-flex">
+            
+            
+            <div class="container flex-row">
+              <div class="row">
+                <div class="col-2 alinear">
+                  <img class="foto " 
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--TKfMtoHN--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/663384/8f7576d9-317a-4d65-8e2f-0b2a933c7177.png">
+                </div>
+                <div class="container col-10 flex-column">
+                  <div class="row">
+                    
+                    <!-- ventana de popover -->
+                    <a class="col-12 text-decoration-none" href="#" title="haneulab" data-toggle="popover" data-placement="bottom" data-trigger="hover" 
+                    data-content="
+                      <button type='button' class='btn btn-primary w-100'>Follow</button>
+                      <br><br><span class='card-avatar'>JOINED</span>
+                      <br><strong><span class='card-avatar'>7 de julio de 2021</span></strong>
+                    ">haneulab</a>
+                      <!-- termina popover -->
+
+                      <!-- card post -->
+                    <p class="col-12">Aug 20</p>
+                    <h3 class="col-12 titulo">Web-Responsive-Design</h3>
+
+                    <div class="container col-12 flex-row m-0">
+                      <div class="row">
+                        <div class="mr-3 ml-3">#webdev</div>
+                        <div class="mr-3 ml-3">#javascript</div>
+                        <div class="mr-3 ml-3">#css</div>
+                        <div class="mr-3 ml-3">#html</div>
+                      </div>
+                    </div>
+                    
+                    <div class="container col-12 flex-row">
+                      <div class="row justify-content-between align-items-center">
+                    
+                        <div class="d-none d-sm-block">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">1 reactions</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">Add comment</a>
+                        </div>
+                    
+                        <div class="d-block d-sm-none">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">1</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">0</a>
+                        </div>
+                    
+                        <div>
+                          <a class="links-post social" href="#">2 min read</a>
+                          <a class="btn btn-secondary social button-save" href="#" role="button">Save</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ************************************************************************************articulo 4 -->
+        <article>
+          <div class="card col-12 d-flex">
+            
+            
+            <div class="container flex-row">
+              <div class="row">
+                <div class="col-2 alinear">
+                  <img class="foto " 
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--bbSZuZUd--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/365087/acc7daac-629a-4a1d-a8e7-e401db5d1d47.png">
+                </div>
+                <div class="container col-10 flex-column">
+                  <div class="row">
+                    
+                    <!-- ventana de popover -->
+                    <a class="col-12 text-decoration-none" href="#" title="Dolamu Asipa" data-toggle="popover" data-placement="top" data-trigger="hover" 
+                    data-content="
+                      <button type='button' class='btn btn-primary w-100'>Follow</button>
+                      <span class='card-avatar'>...an aspiring developer curious about everything coding</span>
+                      <br><br><span class='card-avatar'>JOINED</span>
+                      <br><strong><span class='card-avatar'>12 de abril de 2020</span></strong>
+                    ">Dolamu Asipa</a>
+                      <!-- termina popover -->
+
+                      <!-- card post -->
+                    <p class="col-12">Aug 20</p>
+                    <h3 class="col-12 titulo">10+ Linux Commands Every Newbie Should Know</h3>
+
+                    <div class="container col-12 flex-row m-0">
+                      <div class="row">
+                        <div class="mr-3 ml-3">#linux</div>
+                        <div class="mr-3 ml-3">#codenewbie</div>
+                        <div class="mr-3 ml-3">#programming</div>
+                        <div class="mr-3 ml-3">#beginners</div>
+                      </div>
+                    </div>
+                    
+                    <div class="container col-12 flex-row">
+                      <div class="row justify-content-between align-items-center">
+                    
+                        <div class="d-none d-sm-block">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">2 reactions</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">Add comment</a>
+                        </div>
+                    
+                        <div class="d-block d-sm-none">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">2</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">0</a>
+                        </div>
+                    
+                        <div>
+                          <a class="links-post social" href="#">5 min read</a>
+                          <a class="btn btn-secondary social button-save" href="#" role="button">Save</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ************************************************************************************************articulo 5 -->
+        <article>
+          <div class="card col-12 d-flex">
+            
+            
+            <div class="container flex-row">
+              <div class="row">
+                <div class="col-2 alinear">
+                  <img class="foto " 
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--LA6i8hGz--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/669111/45f3b3ca-86fb-4fa1-b1e0-dfd89c1a7834.jpeg">
+                </div>
+                <div class="container col-10 flex-column">
+                  <div class="row">
+                    
+                    <!-- ventana de popover -->
+                    <a class="col-12 text-decoration-none" href="#" title="Takuya Kikuchi" data-toggle="popover" data-placement="top" data-trigger="hover" 
+                    data-content="
+                      <button type='button' class='btn btn-primary w-100'>Follow</button>
+                      <span class='card-avatar'>Frontend developer in Tokyo 🍣'</span>
+                      <br><br><span class='card-avatar'>LOCATION</span>
+                      <br><strong><span class='card-avatar'>Tokyo</span></strong>
+                      <br><br><span class='card-avatar'>JOINED</span>
+                      <br><strong><span class='card-avatar'>17 de julio de 2021</span></strong>
+                    ">Takuya Kikuchi</a>
+                      <!-- termina popover -->
+
+                      <!-- card post -->
+                    <p class="col-12">Aug 20</p>
+                    <h3 class="col-12 titulo">Deep dive into z-index</h3>
+
+                    <div class="container col-12 flex-row m-0">
+                      <div class="row">
+                        <div class="mr-3 ml-3">#codesandbox</div>
+                        <div class="mr-3 ml-3">#css</div>
+                        <div class="mr-3 ml-3">#frontend</div>
+                      </div>
+                    </div>
+                    
+                    <div class="container col-12 flex-row">
+                      <div class="row justify-content-between align-items-center">
+                    
+                        <div class="d-none d-sm-block">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">2 reactions</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">2 comments</a>
+                        </div>
+                    
+                        <div class="d-block d-sm-none">
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>
+                          <a class="links-post social" href="#">2</a>
+                          <svg class="crayons-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>
+                          <a class="links-post social" href="#">2</a>
+                        </div>
+                    
+                        <div>
+                          <a class="links-post social" href="#">3 min read</a>
+                          <a class="btn btn-secondary social button-save" href="#" role="button">Save</a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </main>
+    <!-- ****************************************************************************termina principal de posts -->
+
+    <!-- ****************************************************************************menu derecho  -->
+      <aside class="col-lg-3 d-none d-lg-block">
+      
+          <!-- card con imagen -->
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img class="image-rigth" src="https://res.cloudinary.com/practicaldev/image/fetch/s--KSi8rL3T--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://res.cloudinary.com/practicaldev/image/fetch/s--3GWkSFQs--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_420/https://dev-to-uploads.s3.amazonaws.com/uploads/podcast/image/346/5b0bd095-4a8c-4449-a43d-9e9b154b9d09.png" alt="">
+            </div>
+            
+            <div class="col-md-8">
+              <div class="card-body">
+                <h4 class="card-title">Tune in to DevNews</h4>
+                <small class="card-text text-justify">S5E5: DeepMind’s XLand, Android 12 Beta’s Camera Switches, a Colorism Issue With Face Filters, & more on DevNews!</small>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- listado -->
+        <div class="card mb-3 " >
+          <div class="row no-gutters align-items-center">
+            <p class="col-9 textbold">Listings</p>
+            <a class="col-3" href="#">See all</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply">Mantine -100 + React hooks and components with native dark theme support</p>
+            <p class="textgray">products</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply">A 97.7% JavaScript Template Blog Website To Make it Your Own!</p>
+            <p class="textgray" >education</p>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply">Looking for InfoSec / Cyber Security jobs? Then have a look at infosec-jobs.com 🍕☕☕💻😸</p>
+            <p class="textgray">collabs</p>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply">AFH - Ionic/React Native/NodeJS/Consultant</p>
+            <p class="textgray">forhire</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters justify-content-center">
+            <p class="hoverapply"><b>Create a Listing</b></p>
+          </div>
+        </div>
+
+        <!-- apartado new -->
+        <div class="card mb-3 " >
+          <div class="row no-gutters align-items-center">
+            <p class="col-9 textbold">#news</p>
+          </div>
+        </div>
+        
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply col-12">Pros and Cons of Progressive Web App</p>
+            <p class="littlebox">New</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply col-12">This week in Flutter #17</p>
+            <p class="littlebox">New</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply col-12">Game Dev Digest — Issue #107 - Parkour! (and More)</p>
+            <p class="littlebox">New</a>
+          </div>
+        </div>
+
+        <!-- apartado #help -->
+        <div class="card mb-3 " >
+          <div class="row no-gutters align-items-center">
+            <p class="col-9 textbold">#help</p>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply">HOW TO MAKE ANCHOR LINKS WORK IN MY DEV POST? ANYONE PLEASE HELP.</p>
+            <p class="textgray">10 comments</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="hoverapply col-12">Smooth parallax effect not responding properly</p>
+            <p class="littlebox">New</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="col-12 hoverapply">Splitting a list similar to a string?</p>
+            <p class="textgray">1 comment</a>
+          </div>
+        </div>
+
+        <div class="card mb-3" >
+          <div class="row no-gutters">
+            <p class="col-12 hoverapply">How to install ImageMagick?</p>
+            <p class="textgray">1 comment</a>
+          </div>
+        </div>
+
+        <div class="card mb-2" >
+          <div class="row no-gutters">
+            <p class="col-12 hoverapply">How to install ImageMagick?</p>
+            <p class="textgray">4 comment</a>
+          </div>
+        </div>
+
+      </aside>
+    <!-- ****************************************************************************termina menu derecho -->
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="efectos.js"></script>
+</body>
+</html>

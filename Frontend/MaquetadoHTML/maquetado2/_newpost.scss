@@ -1,0 +1,95 @@
+.aside-left {
+    display: flex;
+    flex-direction: column;
+}
+main img {
+    width: 600px;
+    height: 300px;
+    border-radius: 5px;
+}
+.colores {
+    display: flex;
+    height:fit-content;  
+}
+.web {
+    background-color:purple;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    // border-radius: 50px
+    // padding: 10px;
+}
+.javascript{
+    background-color: yellow;
+    font-size: 14px;
+    text-align: center;
+    color: black;
+}
+.css {
+    background-color: blue;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+.html {
+    background-color: red;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+.discussion {
+    display: flex;
+    justify-content: space-between;
+}
+.bttn-subs{
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    border-color: gray;
+}
+.text{
+    height: 140px;
+    width: 700px;
+    background-color:lightgrey;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+
+// *********************sidebar rigth
+.nombre{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    &:hover{
+        color:rgb(59, 73, 223);
+    }
+}
+
+.color-text{
+    color:rgb(77, 87, 96)
+    
+}
+
+.cuadro{
+    // border:18px solid black
+    border-top-color: rgb(4, 73, 119);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-style: solid;
+    border-top-width: 32px;
+}
+
+.newfoto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+}
+
+.textalignjustify{
+    text-align:justify;
+}

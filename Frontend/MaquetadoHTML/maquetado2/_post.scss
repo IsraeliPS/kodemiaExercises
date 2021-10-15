@@ -1,0 +1,64 @@
+.cambio-color{
+    background-color: transparent;
+    &:hover{
+        border:1px solid blue;
+    }
+}
+
+.titulo{
+    font-size: 28px;
+    &:hover{
+       color:rgb(50, 62, 190)
+    }
+}
+
+.bottom-line{
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: blue;
+}
+
+.navbox{
+    border-radius: 3px;
+    &:hover{
+        background-color:rgba(59, 73, 223,.2);
+    }
+}
+
+.foto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.alinear>img{
+    margin-left: 10px;
+}
+
+.avatar > img {
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.crece{
+    flex-grow: 1;
+    font-size: 20px;
+}
+
+.card-avatar{
+    font-size: 12px;
+    text-align: justify;
+    color:rgb(77, 87, 96);
+    .azul{
+        color:blue;
+    }
+}
+
+.social{
+    color:rgb(54, 61, 68);
+}
+
+.button-save{
+    background-color: rgb(181, 189, 196);
+    border-color: rgb(181, 189, 196);;
+}

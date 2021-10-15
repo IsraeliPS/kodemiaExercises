@@ -1,0 +1,160 @@
+article {
+  display: flex;
+  flex-direction: column;
+  // margin-left: auto;
+  // margin-right: auto;
+  top:0;
+  div>img {
+    height: 15%;
+    width: 15%;
+  }
+  div>p{
+    color:#64707d;
+  }
+
+  .avatar{
+    font-size: small;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+  
+    .imagepost{
+      border-radius: 50%;
+      width: 55px;
+      margin-right: 20px;
+    }
+  }
+}
+
+#post-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.post {
+  @include center-item();
+  margin: 5px;
+  background-color: #FFF;
+  border: 1px solid lightgray;
+  min-height: 300px;
+  border-radius: 5px;
+  align-items: flex-start;
+}
+
+.user{
+  margin: 0 15px;
+}
+
+.text-post{
+    font-size: small;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    flex-direction: column;
+    .align-text{
+      margin: 0 90px;
+      h3{
+        font-size: 26px;
+        &:hover{
+          color:#3b49bf
+        }
+      }
+    }
+}
+
+.social{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  font-size: 14px;
+  width: 450px;
+  
+  button{
+    height: 28px;
+    width: 55px;
+    border-color: transparent;
+    border-radius: 3px;
+    background-color: rgb(210, 214, 219);
+    color:rgb(89, 91, 93);;
+  }
+
+  .reaction-left{
+    display: flex;
+  }
+  
+  .reaction-rigth{
+    display: flex;
+  }
+}
+
+.reactions{
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.crayons-icon{
+  vertical-align: bottom;
+}
+
+.hashtags{
+  color:#64707d;
+  font-size: 14px;
+}
+
+.list-bar{
+  display: flex;
+  flex-direction: row;
+}
+
+.list-Posts {
+  list-style:none;
+  display:flex;
+  margin: auto 4px;
+  padding: 8px;
+}
+
+.first-image{
+  width: 750px;
+  height: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--Jc0yW3QM--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v6y62nl6gxyl2bkdcf17.png");
+  background-size: 95%;
+  background-position: center;
+  object-fit: cover;
+  
+}
+
+.links-post{
+  text-decoration: none;
+  color:rgb(100, 112, 125);
+  &:hover{
+    color:rgb(8, 9, 10);
+  }
+}
+
+@media (min-width: 900px){
+  .chico{
+    visibility:hidden;
+    width: 0px;
+  }
+}
+
+@media (max-width: 899px){
+  .grande{
+    visibility:hidden;
+    width: 0px;
+  }
+
+  .first-image{
+    width: 450px;
+    height: 170px;
+  }
+
+  .reactions{
+    justify-content: stretch;
+  }
+}

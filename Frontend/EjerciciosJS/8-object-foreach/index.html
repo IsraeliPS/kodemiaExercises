@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Objetos y ForEach</title>
+</head>
+<body>
+    <nav class="sticky-top">
+        <div class="navbar d-flex justify-content-between w-100 ">
+            <p class="mx-auto">En teoría, no hay diferencia entre práctica y teoría. <br>
+                En la práctica, si la hay. (Yogi Berra)</p>
+            <a class="buttonHome p-2" href="../index.html">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="title w-100 text-center">Objetos y ForEach</h1>
+        <h5 class="text-center">Este ejercicio consta de 1 problema que es:</h5>
+        <br>
+        <div class="d-flex flex-row flex-wrap justify-content-center px-0">
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 1: 
+                    <br>let mentorArray = [{
+                        name: "Angel Resendiz",
+                        scores: [{
+                                signature:  "HTML",
+                                score: 10
+                            },
+                            {
+                                signature:  "CSS",
+                                score: 10
+                            },
+                            {
+                                signature:  "JS",
+                                score: 9
+                            },
+                        ]
+                    },
+                    {
+                        name: "Elda Corona",
+                        scores: [{
+                                signature:  "HTML",
+                                score: 10
+                            },
+                            {
+                                signature:  "CSS",
+                                score: 9
+                            },
+                            {
+                                signature:  "JS",
+                                score: 10
+                            },
+                        ]
+                    },
+                    {
+                        name: "Alfred Altamirando",
+                        scores: [
+                            {
+                                signature:  "HTML",
+                                score: 9
+                            },
+                            {
+                                signature:  "CSS",
+                                score: 10
+                            },
+                            {
+                                signature:  "JS",
+                                score: 10
+                            },
+                        ]
+                    },
+                    {
+                        name: "Tux Tuxtla",
+                        scores: [
+                            {
+                                signature:  "HTML",
+                                score: 10
+                            },
+                            {
+                                signature:  "CSS",
+                                score: 8
+                            },
+                            {
+                                signature:  "JS",
+                                score: 10
+                            },
+                        ]
+                    },
+                    {
+                        name: "Fernanda Palacios",
+                        scores: [
+                            {
+                                signature:  "HTML",
+                                score: 10
+                            },
+                            {
+                                signature:  "CSS",
+                                score: 9
+                            },
+                            {
+                                signature:  "JS",
+                                score: 10
+                            },
+                        ]
+                    }
+                ]
+
+                <br><br>- Obtener el score promedio de cada materia (HTML, CSS, JS)
+                <br>- Obtener el promedio indivual de cada mentor
+                <br>- Crear un array de string con la siguiente forma:
+                <br>"Mi nombre es {name} y mi promedio es {promedio}"
+                <br>- Obtener la lista de mentores cuyo promedio sea mayor a 9.5
+                
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio1()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            
+        </div>
+    </main>
+    
+    
+    <footer class="fixed-bottom">
+        <div class="footer d-flex justify-content-center w-100 text-center">
+            <h6 class="">Todos los derechos reservados 2021&copy;</h6>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

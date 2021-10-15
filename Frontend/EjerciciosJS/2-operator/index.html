@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Operadores y estructuras condicionales</title>
+</head>
+<body>
+    <nav class="sticky-top">
+        <div class="navbar d-flex justify-content-between w-100 ">
+            <p class="mx-auto">En teoría, no hay diferencia entre práctica y teoría. <br>
+                En la práctica, si la hay. (Yogi Berra)</p>
+            <a class="buttonHome p-2" href="../index.html">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="title w-100 text-center">Operadores y estructuras condicionales</h1>
+        <h5 class="text-center">Este ejercicio consta de 8 problemas los cuales son:</h5>
+        <br>
+        <div class="d-flex flex-row flex-wrap justify-content-center px-0">
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 1: Pedir 2 números por prompt al usuario y mostrar en consola el resultado de aplicar todas las operaciones aritméticas entre esos dos números</p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio1()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 2: Pedir al usuario dos números y escribir en consola si el primer número es mayor que el segundo</p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio2()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 3: Pedir al usuario dos letras, y determinar si la primera aparece antes o después en el alfabeto</p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio3()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">Ejercicio 4: Pedir 2 variables por prompt y comparar: <br>
+                - Si a > b dividir a entre b<br>
+                - Si a < b sumar a más b<br>
+                - si a == b multiplicar ambos numeros
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio4()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 5: Pedir al usuario por prompt un numero entre 1 y 100 <br>
+                    - Verificar si es un par o impar e imprimir en resultado en consola
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio5()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 6: Pedir al usuario 2 numeros<br>
+                    - Imprimir en consola cual es el menor de los 2<br>
+                    - Imprimir en consola cual es el mayor de los 2
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio6()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 7: Pedir al usuario los siguientes datos a un usuario (nombre, peso actual en kg):<br>
+                    - Calcular el peso que tendria esa persona en la Luna, Marte y Jupiter e Imprimirlo en consola
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio7()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap justify-content-between m-4">
+                <p class="textFormat text-justify">
+                    Ejercicio 8: Pedir al usuario la calificación de un examen ( 0 a 100) por el prompt:<br>
+                    -Imprimir en consola las equivalencias en letra su calificación, es decir:<br>
+                    🎯 si es mayor o igual a 90, imprimir 'A'<br>
+                    🎯 si es mayor o igual a 80 y menor que 90 , imprimir 'B'<br>
+                    🎯 si es mayor o igual a 70 y menor que 80 , imprimir 'C'<br>
+                    🎯 si es mayor o igual a 60 y menor que 70 , imprimir 'D'<br>
+                    🎯 si es mayor o igual a 50 y menor que 60 , imprimir 'E'<br>
+                    🎯 si es menor 50 , imprimir 'F'
+                </p>
+                <div>
+                    <button class="btn btn-outline-dark" type="button" onclick="ejercicio8()">Ejecutar Ejercicio</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    <footer class="fixed-bottom">
+        <div class="footer d-flex justify-content-center w-100 text-center">
+            <h6 class="">Todos los derechos reservados 2021&copy;</h6>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

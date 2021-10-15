@@ -1,0 +1,18 @@
+@import 'colores';
+
+.create-post-inner {
+    background-color: $background-gray;
+}
+
+li{
+    list-style:none;
+}
+
+.closeHashtag{
+    float: right;
+    background-color: $gray-icon;
+    color:$white;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius:30%;
+}

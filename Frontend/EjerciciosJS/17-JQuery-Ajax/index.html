@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../16-JQuery/css/style.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Clases</title>
+</head>
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modificar Datos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group mx-auto w-50">
+                <input type="text" value="" hidden class="form-control modalPerson" name="id" aria-describedby="helpId" placeholder="id">
+                
+                <label for=""></label>
+                <input type="text" class="form-control modalPerson" name="name" aria-describedby="helpId" placeholder="Nombre">
+                <small id="helpId" class="form-text text-muted">Nombre</small>
+            
+                <label for=""></label>
+                <input type="text" class="form-control modalPerson" name="phone" aria-describedby="helpId" placeholder="Telefono">
+                <small id="helpId" class="form-text text-muted">Telefono</small>
+            
+                <label for=""></label>
+                <input type="text" class="form-control modalPerson" name="github" aria-describedby="helpId" placeholder="GitHub">
+                <small id="helpId" class="form-text text-muted">Nombre GitHub</small>
+            
+                <label for=""></label>
+                <input type="text" class="form-control modalPerson" name="urlGithub" aria-describedby="helpId" placeholder="URL Github">
+                <small id="helpId" class="form-text text-muted">URL GitHub</small>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="updateData">Guardar Cambios</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="sticky-top">
+        <div class="navbar d-flex justify-content-between w-100 ">
+            <p class="mx-auto">En teoría, no hay diferencia entre práctica y teoría. <br>
+                En la práctica, si la hay. (Yogi Berra)</p>
+            <a class="buttonHome p-2" href="../index.html">Volver al Inicio</a>
+        </div>
+    </nav>
+    <main>
+        <h1 class="title w-100 text-center">CRUD AJAX</h1>
+        <!-- <input hidden type="text" class="form-control" name="id" id="" aria-describedby="helpId" placeholder="Id"> -->
+
+        <div class="form-group mx-auto w-50">
+            <label for=""></label>
+            <input type="text" class="form-control register" name="name" id="" aria-describedby="helpId" placeholder="Nombre">
+            <small id="helpId" class="form-text text-muted">Nombre</small>
+        
+            <label for=""></label>
+            <input type="text" class="form-control register" name="phone" id="" aria-describedby="helpId" placeholder="Telefono">
+            <small id="helpId" class="form-text text-muted">Telefono</small>
+        
+            <label for=""></label>
+            <input type="text" class="form-control register" name="github" id="" aria-describedby="helpId" placeholder="GitHub">
+            <small id="helpId" class="form-text text-muted">Nombre GitHub</small>
+        
+            <label for=""></label>
+            <input type="text" class="form-control register" name="urlGithub" id="" aria-describedby="helpId" placeholder="URL Github">
+            <small id="helpId" class="form-text text-muted">URL GitHub</small>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a name="" id="btnAgregar" class="btn btn-primary" href="#" role="button">Agregar</a>
+        </div>
+
+        <div class="d-flex flex-row justify-content-center" id="list-names">
+
+        </div>
+    </main>
+    
+    <footer class="fixed-bottom">
+        <div class="footer d-flex justify-content-center w-100 text-center">
+            <h6 class="">Todos los derechos reservados 2021&copy;</h6>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+

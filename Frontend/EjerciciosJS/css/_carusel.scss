@@ -1,0 +1,36 @@
+.imagen {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    & .container{
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+    }
+}
+
+.botones{
+    width: 50px;
+    height: 50px;
+}
+
+.Cuadrado {
+    width: 300px; 
+    height: 300px;
+    background: #aa4892c9;
+}
+
+.Rectangulo {
+    width: 450px; 
+    height: 300px; 
+    background: #ca9442;
+}
+
+.Circulo {
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #547c54;
+}

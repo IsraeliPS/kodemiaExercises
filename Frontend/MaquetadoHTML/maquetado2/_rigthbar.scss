@@ -1,0 +1,36 @@
+.image-rigth{
+    width: 100px;
+    margin: 25px 0;
+    border-radius: 10px;
+
+}
+
+.card-title{
+    font-size: 16px;
+}
+
+.hoverapply{
+    color:rgb(32, 36, 40);
+    font-size: 16px;
+    &:hover{
+        color:#3b49bf;
+    }
+}
+
+.textbold{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.textgray{
+    color:rgb(100, 112, 125);
+    font-size: 14px;
+}
+
+.littlebox{
+    color:white;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 12px;
+    background-color: rgb(59, 73, 223);
+}
