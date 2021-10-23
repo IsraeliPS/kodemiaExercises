@@ -16,7 +16,7 @@ app.use(express.static(dir))
 io.on('connection', function(socket) {
     console.log('New user connected');
 
-    socket.on('nuevo mensaje', function(msj) {
+    socket.on('nuevo mensaje', (msj)=> {
         io.emit('nuevo mensaje', msj);
     });
     
@@ -28,7 +28,7 @@ io.on('connection', function(socket) {
         socket.broadcast.emit('chat:typing',data)
     })
     
-    socket.on('disconnect', function() {
+    socket.on('disconnect', ()=> {
         console.log('Usuario desconectado');
     });
 });
