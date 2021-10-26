@@ -1,0 +1,15 @@
+{
+  "name": "06api_rest",
+  "version": "1.0.0",
+  "description": "API_Rest",
+  "main": "apiRest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yo",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^5.5.3"
+  }
+}
