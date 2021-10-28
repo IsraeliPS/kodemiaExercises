@@ -1,74 +1,86 @@
 const express = require("express");
 const faker = require("faker");
+const authHandler = require("../middlewares/authHandlers");
+const product = require("../usecases/products");
 
 const router = express.Router();
 
-router.get("/:id", (req, res) => {
-  id = req.params.id;
-  res.json({
-    id,
-    name: "Product 1",
-    price: 1000,
-  });
+router.get("/", async (req, res, next) => {
+  try {
+    const products = await product.get();
+    res.json({
+      ok: true,
+      message: "Done",
+      payload: { products },
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.get("/", (req, res) => {
-  const products = [];
-  const { limit } = req.query;
+router.get("/:id", async (req, res, next) => {
+  const { id } = req.params;
 
-  for (let index = 0; index < limit; index++) {
-    products.push({
-      name: faker.commerce.productName(),
-      price: parseInt(faker.commerce.price(), 10),
-      image: faker.image.imageUrl(),
+  try {
+    const productData = await product.getById(id);
+    res.json({
+      ok: true,
+      message: "Done",
+      payload: productData,
     });
+  } catch (error) {
+    next(error);
   }
+});
 
-  if (limit) {
-    res.json({
-      payload: products,
+router.post("/", async (req, res, next) => {
+  try {
+    const dataProduct = req.body;
+    const productCreated = await product.create(dataProduct);
+    res.status(201).json({
+      ok: true,
+      message: "Created successfully",
+      payload: {
+        product: productCreated,
+      },
     });
-  } else {
-    res.json({
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.patch("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const productData = req.body;
+    const productUpdate = await product.update(id, productData);
+
+    res.status(201).json({
+      ok: true,
+      message: `Product ${id} Update successfully`,
+      payload: productUpdate,
+    });
+  } catch (error) {
+    next(error);
+    res.status(404).json({
       ok: false,
-      message: "El limite y la pagina son obligatorios",
+      message: `Product not found`,
     });
   }
 });
 
-router.post("/", (req, res) => {
-  const body = req.body;
-  res.json({
-    ok: true,
-    message: "Created successfully",
-    payload: {
-      body,
-    },
-  });
-});
-
-router.patch("/:id", (req, res) => {
+router.delete("/:id", (req, res, next) => {
   const { id } = req.params;
-  const { name, price } = req.body;
-
-  res.json({
-    ok: true,
-    message: `Product ${id} Update successfuly`,
-    payload: {
-      name,
-      price,
-    },
-  });
-});
-
-router.delete("/:id", (req, res) => {
-  const { id } = req.params;
-
-  //logica para eliminar
-  res.status(202).json({
-    ok: true,
-    message: `Product ${id} deleted successfuly`,
-  });
+  try {
+    //logica para eliminar
+    const productDel = product.del(id);
+    res.status(202).json({
+      status: true,
+      message: `Product ${id} deleted successfully`,
+    });
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;

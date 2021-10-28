@@ -13,6 +13,8 @@ let dir=path.join(__dirname,'public')
 
 app.use(express.static(dir))
 
+//https://www.it-swarm-es.com/es/javascript/crear-un-chat-privado-entre-una-clave-usando-un-nodo.js-y-socket.io/1045767399/
+//página que muestra como hacer salas privadas
 io.on('connection', function(socket) {
     console.log('New user connected');
 
