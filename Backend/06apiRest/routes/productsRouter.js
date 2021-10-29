@@ -1,5 +1,5 @@
 const express = require("express");
-const faker = require("faker");
+
 const authHandler = require("../middlewares/authHandlers");
 const product = require("../usecases/products");
 

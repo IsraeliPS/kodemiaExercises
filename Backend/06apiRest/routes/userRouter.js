@@ -1,7 +1,55 @@
 const express = require("express");
 const faker = require("faker");
-
+const user= require("../usecases/users");
 const router = express.Router();
+
+router.post("/", async(req, res,next) => {
+  try {
+    const dataUser = req.body;
+    const userCreated=await user.create(dataUser);
+
+    res.status(201).json({
+      ok: true,
+      message: "User Create successfuly",
+      payload: {
+        User:userCreated,
+      },
+    });
+    console.log("Usuario creado con exito")
+  } catch (error) {
+    next(error);
+    console.error("userRouter",error)
+  }
+});
+
+router.post("/login", async(req, res,next) => {
+  try {
+    const {username,password} = req.body;
+    const userByName=await user.getByUser(username)
+
+    console.log(userByName)
+    res.status(201).json({
+      ok: true,
+      message: "User Create successfuly",
+      payload: {
+        User:userCreated,
+      },
+    });
+  } catch (error) {
+    next(error);
+    console.error("userRouter",error)
+  }
+});
+
+
+
+
+
+
+
+
+
+
 
 router.get("/:id", (req, res) => {
   try {
@@ -40,21 +88,6 @@ router.get("/", (req, res) => {
         message: "El limite y la pagina son obligatorios",
       });
     }
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.post("/", (req, res) => {
-  const body = req.body;
-  try {
-    res.json({
-      ok: true,
-      message: "User Create successfuly",
-      payload: {
-        body,
-      },
-    });
   } catch (error) {
     next(error);
   }
