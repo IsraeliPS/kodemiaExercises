@@ -1,60 +1,25 @@
-const userAuthHandler = (req, res, next) => {
-  const { auth } = req.body;
-  
-    if (auth) {
-        next()
-    } else {
-      res.status(401).json({
-        ok:false,
-        message:"Unauthorized",
-        // message: err.message,
-        // stack: err.stack,
-      });
-    }
-/*
-{
-    "id":1,
-    "cant":7,
-}*/
+const jwt = require("../lib/jwt");
+
+const authHandler = async (req, res, next) => {
+  try {
+    const { token } = req.headers;
+
+    const payload = await jwt.verify(token);
+    next(payload);
+  } catch (err) {
+    res.status(403).json({
+      status: false,
+      message: "Invalid token",
+      error: err,
+    });
+  }
 };
 
-const productExistHandler=(req,res,next)=>{
-  const {cant}=req.body
-  if (cant<5){
-    next()
-  } else{
-    res.status(409).json({
-      ok:false,
-      message:"insufficient stock"
-    })
-  }
-/*
-{
-    "id":1,
-    "cant":7,
-    "auth":true
-}
-*/
-}
+const permissionHandler = async (payload,req,res,next) => {
+  console.log("payload: ", payload);
+  next();
+  //si tiene rol de admin dejarlo pasar
+  //si tiene rol de usuario arroja error
+};
 
-const categoryExistHandler=(req,res,next)=>{
-  const {category}=req.body
-  if (category){
-    next()
-  } else{
-    res.status(409).json({
-      ok:false,
-      message:"not existent category "
-    })
-  }
-}
-/*
-{
-    "id":1,
-    "cant":4,
-    "auth":true,
-    "category":true
-}
-*/
-
-module.exports =  {userAuthHandler, productExistHandler,categoryExistHandler};
+module.exports = { authHandler, permissionHandler };

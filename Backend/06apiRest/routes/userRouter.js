@@ -1,108 +1,107 @@
 const express = require("express");
-const faker = require("faker");
-const user= require("../usecases/users");
+const user = require("../usecases/users");
+const jwt = require("../lib/jwt");
+const bcrypt=require("bcrypt");
+
 const router = express.Router();
 
-router.post("/", async(req, res,next) => {
+router.post("/", async (req, res, next) => {
   try {
     const dataUser = req.body;
-    const userCreated=await user.create(dataUser);
-
+    const userCreated = await user.create(dataUser);
     res.status(201).json({
-      ok: true,
+      status: true,
       message: "User Create successfuly",
       payload: {
-        User:userCreated,
+        User: userCreated,
       },
     });
-    console.log("Usuario creado con exito")
+    console.log("Usuario creado con exito");
   } catch (error) {
     next(error);
-    console.error("userRouter",error)
+    console.error("createUser Router", error);
   }
 });
 
-router.post("/login", async(req, res,next) => {
+router.post("/login", async (req, res, next) => {
   try {
-    const {username,password} = req.body;
-    const userByName=await user.getByUser(username)
-
-    console.log(userByName)
-    res.status(201).json({
-      ok: true,
-      message: "User Create successfuly",
-      payload: {
-        User:userCreated,
-      },
-    });
-  } catch (error) {
-    next(error);
-    console.error("userRouter",error)
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-router.get("/:id", (req, res) => {
-  try {
-    id = req.params.id;
-    res.json({
-      avatar: faker.image.avatar(),
-      name: faker.name.firstName(),
-      lastName: faker.name.lastName(),
-      department: faker.name.jobArea(),
-    });
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.get("/", (req, res) => {
-  const user = [];
-  const { limit } = req.query;
-  try {
-    for (let index = 0; index < limit; index++) {
-      user.push({
-        avatar: faker.image.avatar(),
-        name: faker.name.firstName(),
-        lastName: faker.name.lastName(),
-        department: faker.name.jobArea(),
-      });
-    }
-
-    if (limit) {
-      res.json({
-        users: user,
+    const { username, password } = req.body;
+    
+    const userByName = await user.getByUser({ username });
+    const { _id } = userByName;
+    const passHash = userByName.password;
+    
+    const isMatch = await bcrypt.compare(password, passHash);
+    if (isMatch) {
+      const token = await jwt.createJWT(_id);
+      res.status(201).json({
+        status: true,
+        message: "Token Generate",
+        payload: {
+          token: token,
+        },
       });
     } else {
-      res.json({
-        ok: false,
-        message: "El limite y la pagina son obligatorios",
+      res.status(404).json({
+        status: false,
+        message: `User not found`,
       });
     }
+
+    // console.log("regresa el usuario",userByName)
+    //
+  } catch (error) {
+    next(error);
+    console.error("generate token Router", error);
+  }
+});
+
+router.get("/:id", async(req, res,next) => {
+  try {
+    const {id} = req.params;
+    const userById=await user.getById(id)
+    res.status(200).json({
+      status: true,
+      message: "Done",
+      payload: userById,
+    });
   } catch (error) {
     next(error);
   }
 });
 
-router.patch("/:id", (req, res) => {
-  const { id } = req.params;
-  const { name, lastName, telephone } = req.body;
+router.get("/", async (req, res,next) => {
+  try{
+    const users=await user.get();
+    res.status(200).json({
+      status: true,
+      message: "Done",
+      payload: { users },
+    })
+
+  }catch(err){
+    next (err)
+  }
+  
+});
+
+router.patch("/:id", async(req, res,next) => {
   try {
-    res.json({
-      ok: true,
-      message: `User ${name} Login Successfuly`,
+    const { id } = req.params;
+    const userData= req.body;
+    const userUpdate=await user.update(id,userData);
+
+    res.status(201).json({
+      status: true,
+      message: `User update Successfuly`,
+      payload: userUpdate
     });
   } catch (error) {
     next(error);
+    res.status(404).json({
+      status: false,
+      message: `User not found`,
+    });
   }
 });
 

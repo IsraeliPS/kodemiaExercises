@@ -1,6 +1,6 @@
 const express = require("express");
 
-const authHandler = require("../middlewares/authHandlers");
+const {authHandler,permissionHandler} = require("../middlewares/authHandlers");
 const product = require("../usecases/products");
 
 const router = express.Router();
@@ -8,8 +8,8 @@ const router = express.Router();
 router.get("/", async (req, res, next) => {
   try {
     const products = await product.get();
-    res.json({
-      ok: true,
+    res.status(200).json({
+      status: true,
       message: "Done",
       payload: { products },
     });
@@ -23,7 +23,7 @@ router.get("/:id", async (req, res, next) => {
 
   try {
     const productData = await product.getById(id);
-    res.json({
+    res.status(200).json({
       ok: true,
       message: "Done",
       payload: productData,
@@ -33,7 +33,7 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
+router.post("/",async (req, res, next) => {
   try {
     const dataProduct = req.body;
     const productCreated = await product.create(dataProduct);

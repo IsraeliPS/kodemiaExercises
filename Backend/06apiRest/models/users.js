@@ -16,13 +16,18 @@ const schema = new Schema({
     maxlength: 20,
     minlength: 1,
   },
+  email: {
+    type: String,
+    minlength: 1,
+    required: true,
+  },
   username: {
     type: String,
     trim: true,
     maxlength: 50,
     minlength: 1,
     required: true,
-    // unique: true,
+    unique: true,
   },
   password: {
     type: String,

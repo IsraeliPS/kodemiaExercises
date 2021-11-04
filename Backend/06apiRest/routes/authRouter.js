@@ -1,22 +1,40 @@
 const express = require("express");
-const jwt=require('jsonwebtoken')
+const jwt = require("../lib/jwt.js");
+const users = require("../usecases/users");
+const moment=require('moment');
 
 const router = express.Router();
 
-const secret="MySecret"
-const payload={
-    sub:1,
-    role:"customer"
-}
+router.post("/", async (req, res, next) => {
+  const { username, password } = req.body;
 
+  const user = await users.getByUser(username);
 
-router.post("/auth",(req,res,next)=>{
-    try{
+  const isMatch = await users.authenticate(user, password);
 
-    }
-    catch(error){
-        next(error)
-    }
-})
+  if (isMatch) {
+    const payload = {
+      sub: user._id,
+      role: user.role,
+      iat: moment().unix(),
+      exp: moment().add(14, "days").unix()
+    };
 
-const payload=jwt.sign(payload,secret)
+    const token = await jwt.sign(payload);
+
+    res.status(200).json({
+      ok: true,
+      message: "Sign in successful!",
+      payload: {
+        token,
+      },
+    });
+  } else {
+    res.status(401).json({
+      ok: false,
+      message: "Password missmatch",
+    });
+  }
+});
+
+module.exports = router;

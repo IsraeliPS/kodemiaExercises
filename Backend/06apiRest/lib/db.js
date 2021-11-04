@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
-const config=require("dotenv").config();
+const config=require("./config")
 
+// console.log(`mongodb+srv://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.name}?retryWrites=true&w=majority`)
 const connect = () =>
   new Promise((res, reject) => {
     mongoose.connect(
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`,
+      `mongodb+srv://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.name}?retryWrites=true&w=majority`,
       
       {
         useNewUrlParser: true,
@@ -22,4 +23,4 @@ const connect = () =>
     });
   });
 
-module.exports = {connect,};
+module.exports = {connect};

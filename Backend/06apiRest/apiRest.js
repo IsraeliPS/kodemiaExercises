@@ -1,4 +1,6 @@
 const express = require("express");
+const config=require("./lib/config")
+const cors=require("cors")
 const app = express();
 
 const apiRouter = require("./routes");
@@ -10,10 +12,11 @@ const {
   categoryExistHandler,
 } = require("./middlewares/authHandlers.js");
 
+app.use(cors("*"))
 const db = require("./lib/db");
 // const { use } = require("./routes/productsRouter");
 
-const port = 8000;
+const port = config.app.port;
 
 app.use(express.json());
 

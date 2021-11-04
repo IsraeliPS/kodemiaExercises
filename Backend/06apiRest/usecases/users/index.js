@@ -1,33 +1,34 @@
 const User = require("../../models/users").model;
-const hashPassword = require("../../lib/crypt");
-
+const encrypt = require("../../lib/crypt");
 
 const create = async (dataUser) => {
-  const { firstname,lastname,username,password } = dataUser;
-  try {
-    const hash = await hashPassword(password);
-    
-    const user = new User({ firstname,lastname,username,password:hash });
-    console.log("imprimiendo user",user)
-    const savedUser = await user.save();
+  const { firstname, lastname, username, password, email } = dataUser;
+  const hash = await encrypt.hashPassword(password);
 
-    console.log("saved user",savedUser)
-    return savedUser;
-  } catch (error) {
-    console.error("error en userCase",error);
-  }
+  const user = new User({ firstname, lastname, email, username, password: hash });
+  const savedUser = await user.save();
+  return savedUser;
 };
 
 const get = async () => {
-  const allProduct = await User.find({}).exec();
+  const allUser = await User.find({}).exec();
 
-  return allProduct;
+  return allUser;
+};
+
+const getById = async (idUser) => {
+  const userById = await User.findById(idUser).exec();
+  return userById;
 };
 
 const getByUser = async (user) => {
-  const userName = await User.find(user).exec();
-  return userName;
+  return await User.findOne(user).exec();
 };
 
+const authenticate = async (user, password) => {
+  const hash = user.password;
 
-module.exports={create,get,getByUser}
+  return await encrypt.verifyPassword(password, hash);
+};
+
+module.exports = { create, get, getById, getByUser, authenticate};
