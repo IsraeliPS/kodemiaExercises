@@ -7,10 +7,11 @@ if (value){
 }
 
 function fillForm(value){
-    let {cover_image,title,hashtags,post_text}=value
-    
+    let {id,userName,image,title,tags,dateCreation,textContainer}=value
+    // let {cover_image,title,hashtags,post_text}=value
+    console.log(tags)
     //**********************************************carga imagen
-    $("#image-url").val(cover_image)
+    $("#image-url").val(image)
 
     //**********************************************carga titulo y post
     cont=0
@@ -21,14 +22,14 @@ function fillForm(value){
                 txt.value=title
                 break
             case 1:
-                txt.value=post_text
+                txt.value=textContainer
                 break
         }
         cont++
     }
     
     //**********************************************carga los hashtags
-    hashtags.forEach((valor)=>{
+    tags.forEach((valor)=>{
         let tTable = $("#hashtagsSelected")
             let tdCell=createNode("td",valor)
             tdCell.classList.add("hashValue", "mr-3")
