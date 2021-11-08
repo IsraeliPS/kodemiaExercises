@@ -111,7 +111,9 @@ function printPost(){
                             let h5User=createNode("h5",userName)
                             h5User.classList.add("card-title")
 
-                            let h6Data=createNode("h6",dateCreation)
+                            let date=new Date(dateCreation)
+                            let fecha=date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
+                            let h6Data=createNode("h6",fecha)
                             h6Data.classList.add("card-subtitle", "mb-2", "text-muted")
 
                         divUserName.appendChild(h5User)
@@ -134,13 +136,14 @@ function printPost(){
                             aTitle.onclick=()=>{saveData(post,"index_post.html")}
                             
                             h3Title.appendChild(aTitle)
-                        tags.forEach(item=>{
-                            let name=createNode("span",`#${item}`)
-                            name.classList.add("col-3", "text-center")
-                            divRowTitle.appendChild(name)
-                        })
+                            divRowTitle.appendChild(h3Title)
+                            tags.forEach(item=>{
+                                let name=createNode("span",`#${item}`)
+                                name.classList.add("col-3", "text-center","sizeText")
+                                divRowTitle.appendChild(name)
+                            })
 
-                    divRowTitle.appendChild(h3Title)
+                    
 
                     let divRowReactions=document.createElement("div")
                     divRowReactions.classList.add("row")
@@ -247,3 +250,4 @@ function createPost(postObject){
 }
 
 printPost()
+
