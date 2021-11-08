@@ -12,47 +12,12 @@ router.post("/", async (req, res, next) => {
     res.status(201).json({
       status: true,
       message: "User Create successfuly",
-      payload: {
-        User: userCreated,
-      },
+      payload: userCreated
     });
     console.log("Usuario creado con exito");
   } catch (error) {
     next(error);
     console.error("createUser Router", error);
-  }
-});
-
-router.post("/login", async (req, res, next) => {
-  try {
-    const { username, password } = req.body;
-    
-    const userByName = await user.getByUser({ username });
-    const { _id } = userByName;
-    const passHash = userByName.password;
-    
-    const isMatch = await bcrypt.compare(password, passHash);
-    if (isMatch) {
-      const token = await jwt.createJWT(_id);
-      res.status(201).json({
-        status: true,
-        message: "Token Generate",
-        payload: {
-          token: token,
-        },
-      });
-    } else {
-      res.status(404).json({
-        status: false,
-        message: `User not found`,
-      });
-    }
-
-    // console.log("regresa el usuario",userByName)
-    //
-  } catch (error) {
-    next(error);
-    console.error("generate token Router", error);
   }
 });
 
@@ -105,12 +70,13 @@ router.patch("/:id", async(req, res,next) => {
   }
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id",async (req, res,next) => {
   const { id } = req.params;
   try {
-    //logica para eliminar
+    
+    const userDel =await user.del(id);
     res.status(202).json({
-      ok: true,
+      status: true,
       message: `User ${id} deleted successfuly`,
     });
   } catch (error) {

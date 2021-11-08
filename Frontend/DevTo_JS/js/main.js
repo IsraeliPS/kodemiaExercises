@@ -17,7 +17,7 @@ function getData(){
     let postObject
     $.ajax({
         method:"GET",
-        url:"https://proyecto-devto-default-rtdb.firebaseio.com/Posts/posts.json",
+        url:"http://localhost:8000/posts/",
         success:response=>{
             postObject=response
         },
@@ -27,16 +27,6 @@ function getData(){
         async:false
     })
     return postObject
-}
-
-function convertArray(postObject){
-    let arrayPost=[]
-    for (const key in postObject) {
-        let postData = postObject[key]
-        postData = { ...postData, id:key}
-        arrayPost = [...arrayPost, postData]
-    }
-    return arrayPost
 }
 
 function createNode(typeElement, text){
@@ -63,18 +53,35 @@ function deletePost(idPost){
     printPost()
 }
 
+function convertArray(postObject){
+    let arrayPost=[]
+    let data=postObject.payload
+    for (let x of data){
+        let tags =x.tags.split(",")
+        x.tags=tags
+        arrayPost = [...arrayPost,x]
+    }
+    // for (const key in postObject.payload) {
+    //     let postData = postObject[key]
+    //     console.log(postData)
+    //     postData = { ...postData, id:key}
+    //     arrayPost = [...arrayPost, postData]
+    // }
+    return arrayPost
+}
+
 function printPost(){
     let data=convertArray(getData()),cont=0
-    
     let tBody = document.getElementById("list-posts")
-        
+    
     while (tBody.lastElementChild){
         tBody.removeChild(tBody.lastElementChild)
     }
-
+    
     data.forEach(post=>{
-        let {coments,id,cover_image,data_created,likes,title,usuario,hashtags}=post
-        
+        let {id,userName,image,title,tags,dateCreation,textContainer}=post
+        let likes=0,coments=0
+
         let divRow=document.createElement("div")
         divRow.classList.add("row")
 
@@ -83,7 +90,7 @@ function printPost(){
                 if (cont==0){
                     let imgCard=document.createElement("img")
                     imgCard.classList.add("card-img-top", "col-12", "p-2")
-                    imgCard.src=cover_image
+                    imgCard.src=image
                     imgCard.alt="principal_Image"
                     divCard.appendChild(imgCard)
                 }
@@ -95,16 +102,16 @@ function printPost(){
 
                         let imgAvatar=document.createElement("img")
                         imgAvatar.classList.add("col-2", "rounded-pill")
-                        imgAvatar.src=usuario.img
+                        imgAvatar.src=image
                         imgAvatar.alt="avatar"
 
                         let divUserName=document.createElement("div")
                         divUserName.classList.add("col-8")
 
-                            let h5User=createNode("h5",usuario.name)
+                            let h5User=createNode("h5",userName)
                             h5User.classList.add("card-title")
 
-                            let h6Data=createNode("h6",data_created)
+                            let h6Data=createNode("h6",dateCreation)
                             h6Data.classList.add("card-subtitle", "mb-2", "text-muted")
 
                         divUserName.appendChild(h5User)
@@ -127,7 +134,7 @@ function printPost(){
                             aTitle.onclick=()=>{saveData(post,"index_post.html")}
                             
                             h3Title.appendChild(aTitle)
-                        hashtags.forEach(item=>{
+                        tags.forEach(item=>{
                             let name=createNode("span",`#${item}`)
                             name.classList.add("col-3", "text-center")
                             divRowTitle.appendChild(name)
@@ -210,6 +217,7 @@ function printPost(){
         divRow.appendChild(divCard)
         tBody.appendChild(divRow)
         cont++
+        
     })
 }
 

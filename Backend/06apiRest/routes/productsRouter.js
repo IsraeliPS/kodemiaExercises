@@ -72,7 +72,7 @@ router.patch("/:id", async (req, res, next) => {
 router.delete("/:id", (req, res, next) => {
   const { id } = req.params;
   try {
-    //logica para eliminar
+    
     const productDel = product.del(id);
     res.status(202).json({
       status: true,

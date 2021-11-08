@@ -22,7 +22,18 @@ const getById = async (idUser) => {
 };
 
 const getByUser = async (user) => {
-  return await User.findOne(user).exec();
+  return await User.findOne({user}).exec();
+};
+
+const update = async (idUser, dataUser) => {
+  const { firstname, lastname, username, password, email } = dataUser;
+  const hash = await encrypt.hashPassword(password);
+
+  return User.findByIdAndUpdate(idUser,{firstname, lastname, username,password: hash, email}).exec();
+};
+
+const del = (idUser) => {
+  return User.findByIdAndDelete(idUser).exec();
 };
 
 const authenticate = async (user, password) => {
@@ -31,4 +42,4 @@ const authenticate = async (user, password) => {
   return await encrypt.verifyPassword(password, hash);
 };
 
-module.exports = { create, get, getById, getByUser, authenticate};
+module.exports = { create, get, getById, getByUser, update, del, authenticate};
