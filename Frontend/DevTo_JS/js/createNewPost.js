@@ -79,7 +79,7 @@ function preUpdatePost(value){
                     value.title=txt.value
                     break
                 case 1:
-                    value.post_text=txt.value
+                    value.textContainer=txt.value
                     break
             }
         }
@@ -94,7 +94,7 @@ function preUpdatePost(value){
 function updatePost(idPost,objectPost){
     $.ajax({
         method:"PATCH",
-        url:`https://proyecto-devto-default-rtdb.firebaseio.com/Posts/posts/${idPost}.json`,
+        url:`http://localhost:8000/posts/${idPost}`,
         data:JSON.stringify(objectPost),
         success:(response)=>{
             console.log(response)
@@ -178,7 +178,7 @@ function createPost(postObject){
 
     $.ajax({
         method:"POST",
-        url:"https://proyecto-devto-default-rtdb.firebaseio.com/Posts/posts.json",
+        url:"http://localhost:8000/posts/",
         data:JSON.stringify(postObject),
         success:(response)=>{
             resp=response
@@ -205,7 +205,7 @@ function cargaHashtags(){
     let arrayHash=[]
     $.ajax({
         method:"GET",
-        url:"https://proyecto-devto-default-rtdb.firebaseio.com/Posts/hashtags.json",
+        url:"http://localhost:8000/posts/",
         success:response=>{
             hashObject=response
         },
